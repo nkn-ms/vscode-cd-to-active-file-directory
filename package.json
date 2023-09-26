@@ -1,7 +1,8 @@
 {
+  "publisher": "nkn-ms",
   "name": "cd-to-active-file-directory-in-statusbar",
   "displayName": "cd to active file directory in statusbar",
-  "description": "",
+  "description": "cd to active file directory in statusbar",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.82.0"
