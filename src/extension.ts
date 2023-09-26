@@ -26,10 +26,14 @@ function getDirectoryPath(textEditor: vscode.TextEditor | undefined): string {
 	let diretoryPath = '';
 	if (textEditor) {
 		const fileName = textEditor.document.fileName;
-		const filePath = fileName.split(' ').join('\\ ');
+		const filePath = nomalizeFilePathSpace(fileName);
 		diretoryPath = dirname(filePath);
 	}
 	return diretoryPath;
+}
+
+function nomalizeFilePathSpace(filePath: string): string {
+	return filePath.split(' ').join('\\ ');
 }
 
 function updateStatusBarItem(): void {
