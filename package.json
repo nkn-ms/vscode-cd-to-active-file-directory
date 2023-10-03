@@ -4,7 +4,7 @@
   "license": "MIT",
   "displayName": "cd to active file directory in statusbar",
   "description": "cd to active file directory in statusbar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.82.0"
   },
