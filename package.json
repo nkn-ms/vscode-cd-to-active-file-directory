@@ -18,6 +18,7 @@
     "file",
     "directory"
   ],
+  "icon": "/images/Microsoft-Fluentui-Emoji-3d-File-Folder-3d.128.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/nkn-ms/vscode-cd-to-active-file-directory.git"
