@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
 		terminal.show();
 		const textEditor = vscode.window.activeTextEditor;
 		const diretoryPath = getDirectoryPath(textEditor);
-		terminal.sendText(`cd ${diretoryPath}`);
+		terminal.sendText(`cd '${diretoryPath}'`);
 	});
 	context.subscriptions.push(disposable);
 	context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(updateStatusBarItem));
@@ -25,15 +25,10 @@ export function activate(context: vscode.ExtensionContext) {
 function getDirectoryPath(textEditor: vscode.TextEditor | undefined): string {
 	let diretoryPath = '';
 	if (textEditor) {
-		const fileName = textEditor.document.fileName;
-		const filePath = nomalizeFilePathSpace(fileName);
+		const filePath = textEditor.document.fileName;
 		diretoryPath = dirname(filePath);
 	}
 	return diretoryPath;
-}
-
-function nomalizeFilePathSpace(filePath: string): string {
-	return filePath.split(' ').join('\\ ');
 }
 
 function updateStatusBarItem(): void {
